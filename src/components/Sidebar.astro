@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon';
+---
+<div class="sidebar-open ">
+<div
+    class="flex-col w-[5rem] max-h-screen bg-slate-50 border-r-2 border-black fixed hidden lg:flex"
+>
+    <div class="flex flex-col flex-nowrap justify-around items-center h-screen">
+        <div>
+                <Icon name="ion:book-sharp" size="4x" />
+        </div>
+        <div class="flex flex-col gap-5"> 
+            <a
+                data-tip="Home"
+                class="hover:bg-slate-200 hover:rounded-full lg:tooltip lg:tooltip-right"
+                href="index.astro"><Icon name="iconoir:home" size="3x" /></a
+            >
+            <a
+                data-tip="Books"
+                class="hover:bg-slate-200 hover:rounded-full lg:tooltip lg:tooltip-right"
+                href="index.astro"
+                ><Icon name="fluent:book-20-regular" size="3x" /></a
+            >
+            <a
+                data-tip="Saved"
+                class="hover:bg-slate-200 hover:rounded-full lg:tooltip lg:tooltip-right"
+                href="index.astro"
+                ><Icon name="ion:bookmark-outline" size="3x" /></a
+            >
+            <a
+                data-tip="Settings"
+                class="hover:bg-slate-200 hover:rounded-full lg:tooltip lg:tooltip-right"
+                href="index.astro"><Icon name="carbon:settings" size="3x" /></a
+            >
+        </div>
+        <div>
+            <a
+            data-tip="Help"
+            class="hover:bg-slate-200 hover:rounded-full lg:tooltip lg:tooltip-right"
+            href="index.astro"><Icon name="ic:baseline-help" size="3x" /></a
+        >
+        </div>
+    </div>
+</div>
+</div>
+
+<style></style>
+

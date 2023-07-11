@@ -1,83 +1,76 @@
 ---
+import Sidebar from '../components/Sidebar.astro';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Drawer from '../components/Drawer.astro';
+import { Icon } from 'astro-icon';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br
-			/>
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
-			above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="Book-It">
+	<div class="flex flex-row">
+		<Sidebar />
+		<div class="w-full mt-5">
+			<header
+				class="flex flex-wrap flex-row justify-between sticky z-[1] top-2 sm:justify-around"
+			>
+			<div class="flex flex-col items-center hidden lg:flex">
+				<Icon name="mdi:account-outline" size="3x" />
+				<div class="flex flex-row">
+					<button class="btn btn-neutral btn-xs">Sign-Up</button>
+				    <button class="btn btn-accent btn-xs">Log-In</button>
+				</div>
+			</div>
+			<div class="xl:hidden"> 
+				<Drawer />
+			</div>
+				<div class="flex flex-row">
+					<div class="flex">
+						<Icon name="prime:search" size="3x" />
+						<input
+							type="text"
+							placeholder="Search book name, author, or ISBN"
+							class="input input-bordered w-96 hidden sm:block" 
+						/>
+					</div>
+				</div>
+				<a class="flex hover:bg-slate-200 hover:rounded-full lg:tooltip lg:tooltip-right" data-tip="Languages">
+					<Icon name="fxemoji:spanishflag" size="3x" />
+				</a>
+			</header>
+			<div class="hero min-h-screen">
+				<div class="hero-content flex-col lg:flex-row-reverse">
+					<img
+						src="../assets/book-cover.png"
+						class=" w-72 sm:w-5/12 sm:h-full sm:object-cover sm:object-center sm:rounded-lg sm:ml-5 sm:mr-5 sm:mt-5 sm:mb-5"
+					/>
+					<div>
+						<h1 class="text-5xl font-bold text-center">
+							Happy Readings Visitors!
+						</h1>
+						<p class="py-6 text-xl text-center">
+							Unleash the power of words with Book-It: Your portal
+							to the literary universe! Our vast library offers a
+							haven for book lovers, where imagination knows no
+							bounds.
+						</p>
+						<p class="py-6 text-xl text-center">
+							With Book-It, renting books is not just a
+							transaction; it's a gateway to enlightenment,
+							inspiration, and transformation. Fly high with the
+							power of literature at your fingertips. Discover,
+							learn, and indulge in the magic of storytelling.
+							Welcome to Book-It, a modern way to rent books!"
+						</p>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+						<button class="btn btn-neutral"
+							>Start reading <Icon
+								name="eva:diagonal-arrow-right-up-fill"
+								size="2x"
+							/></button
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<style></style>
+</Layout>
